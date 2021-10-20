@@ -1,0 +1,108 @@
+Error - 2021-10-14 11:47:21 --> Severity: Notice --> Undefined variable: jsonCode /mnt/c/Posao/backend/index.php 14
+Error - 2021-10-14 11:47:21 --> Severity: Error --> Exception: Call to a member function select() on null /mnt/c/Posao/backend/index.php 14
+Error - 2021-10-14 12:13:03 --> Severity: Notice --> Undefined variable: jsonCode /mnt/c/Posao/backend/index.php 14
+Error - 2021-10-14 12:13:03 --> Severity: Error --> Exception: Call to a member function select() on null /mnt/c/Posao/backend/index.php 14
+Error - 2021-10-14 12:16:58 --> Severity: Notice --> Undefined variable: jsonCode /mnt/c/Posao/backend/index.php 14
+Error - 2021-10-14 12:16:58 --> Severity: Error --> Exception: Call to a member function select() on null /mnt/c/Posao/backend/index.php 14
+Error - 2021-10-14 12:23:51 --> Severity: Error --> Exception: Class 'default_model' not found /mnt/c/Posao/backend/src/sys/init.php 9
+Error - 2021-10-14 12:27:50 --> Severity: Error --> Exception: syntax error, unexpected '$db_host' (T_VARIABLE) /mnt/c/Posao/backend/src/sys/init.php 7
+Error - 2021-10-14 12:28:19 --> Severity: Error --> Exception: syntax error, unexpected '$db_host' (T_VARIABLE) /mnt/c/Posao/backend/src/sys/init.php 7
+Error - 2021-10-14 12:28:19 --> Severity: Error --> Exception: syntax error, unexpected '$db_host' (T_VARIABLE) /mnt/c/Posao/backend/src/sys/init.php 7
+Error - 2021-10-14 12:28:21 --> Severity: Error --> Exception: syntax error, unexpected '$db_host' (T_VARIABLE) /mnt/c/Posao/backend/src/sys/init.php 7
+Error - 2021-10-14 12:31:23 --> Severity: Error --> Exception: syntax error, unexpected '$db_host' (T_VARIABLE) /mnt/c/Posao/backend/src/sys/init.php 7
+Error - 2021-10-14 12:31:25 --> Severity: Error --> Exception: syntax error, unexpected '$db_host' (T_VARIABLE) /mnt/c/Posao/backend/src/sys/init.php 7
+Error - 2021-10-14 12:32:50 --> Severity: Error --> Exception: syntax error, unexpected '$db_host' (T_VARIABLE) /mnt/c/Posao/backend/src/sys/init.php 7
+Error - 2021-10-14 12:33:15 --> Severity: Error --> Exception: syntax error, unexpected '$db_host' (T_VARIABLE) /mnt/c/Posao/backend/src/sys/init.php 7
+Error - 2021-10-14 12:36:01 --> Severity: Error --> Exception: syntax error, unexpected '$db_host' (T_VARIABLE) /mnt/c/Posao/backend/src/sys/init.php 7
+Error - 2021-10-14 12:36:02 --> Severity: Error --> Exception: syntax error, unexpected '$db_host' (T_VARIABLE) /mnt/c/Posao/backend/src/sys/init.php 7
+Error - 2021-10-14 12:36:02 --> Severity: Error --> Exception: syntax error, unexpected '$db_host' (T_VARIABLE) /mnt/c/Posao/backend/src/sys/init.php 7
+Error - 2021-10-14 12:36:13 --> Severity: Error --> Exception: syntax error, unexpected '$db_host' (T_VARIABLE) /mnt/c/Posao/backend/src/sys/init.php 7
+Error - 2021-10-14 12:36:13 --> Severity: Error --> Exception: syntax error, unexpected '$db_host' (T_VARIABLE) /mnt/c/Posao/backend/src/sys/init.php 7
+Error - 2021-10-14 12:36:27 --> Severity: Error --> Exception: syntax error, unexpected '$db_host' (T_VARIABLE) /mnt/c/Posao/backend/src/sys/init.php 7
+Error - 2021-10-14 12:36:28 --> Severity: Error --> Exception: syntax error, unexpected '$db_host' (T_VARIABLE) /mnt/c/Posao/backend/src/sys/init.php 7
+Error - 2021-10-14 12:36:28 --> Severity: Error --> Exception: syntax error, unexpected '$db_host' (T_VARIABLE) /mnt/c/Posao/backend/src/sys/init.php 7
+Error - 2021-10-14 12:36:28 --> Severity: Error --> Exception: syntax error, unexpected '$db_host' (T_VARIABLE) /mnt/c/Posao/backend/src/sys/init.php 7
+Error - 2021-10-14 12:38:19 --> Severity: Error --> Exception: syntax error, unexpected '$db_host' (T_VARIABLE) /mnt/c/Posao/backend/src/sys/init.php 7
+Error - 2021-10-14 13:09:32 --> Severity: Error --> Exception: syntax error, unexpected 'include' (T_INCLUDE) /mnt/c/Posao/backend/src/sys/init.php 6
+Error - 2021-10-14 13:09:44 --> Severity: Error --> Exception: Call to undefined method baza::select() /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 19
+Error - 2021-10-14 13:11:25 --> Severity: Error --> Exception: Call to undefined method baza::select() /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 19
+Error - 2021-10-14 13:11:26 --> Severity: Error --> Exception: Call to undefined method baza::select() /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 19
+Error - 2021-10-14 13:11:27 --> Severity: Error --> Exception: Call to undefined method baza::select() /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 19
+Error - 2021-10-14 13:11:28 --> Severity: Error --> Exception: Call to undefined method baza::select() /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 19
+Error - 2021-10-14 13:13:57 --> Severity: Error --> Exception: Call to undefined method baza::select() /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 19
+Error - 2021-10-14 13:13:58 --> Severity: Error --> Exception: Call to undefined method baza::select() /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 19
+Error - 2021-10-14 13:41:39 --> Severity: Error --> Exception: syntax error, unexpected '}', expecting ',' or ';' /mnt/c/Posao/backend/src/config/mysql_driver.php 66
+Error - 2021-10-14 13:41:55 --> Severity: Notice --> Undefined property: baza::$db /mnt/c/Posao/backend/src/config/mysql_driver.php 52
+Error - 2021-10-14 13:41:55 --> Severity: Error --> Exception: Call to a member function escape() on null /mnt/c/Posao/backend/src/config/mysql_driver.php 52
+Error - 2021-10-14 13:42:36 --> Severity: Error --> Exception: Call to undefined method mysqli::escape() /mnt/c/Posao/backend/src/config/mysql_driver.php 52
+Error - 2021-10-14 13:43:09 --> Severity: Error --> Exception: Call to a member function from() on string /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 17
+Error - 2021-10-14 13:44:07 --> Severity: Error --> Exception: Call to undefined method mysqli::escape() /mnt/c/Posao/backend/src/config/mysql_driver.php 68
+Error - 2021-10-14 13:44:08 --> Severity: Error --> Exception: Call to undefined method mysqli::escape() /mnt/c/Posao/backend/src/config/mysql_driver.php 68
+Error - 2021-10-14 13:44:59 --> Severity: Error --> Exception: Call to a member function from() on string /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 17
+Error - 2021-10-14 13:46:55 --> Severity: Notice --> Undefined variable: sql /mnt/c/Posao/backend/src/config/mysql_driver.php 89
+Error - 2021-10-14 13:46:55 --> Severity: Warning --> mysqli::query(): Empty query /mnt/c/Posao/backend/src/config/mysql_driver.php 89
+Error - 2021-10-14 13:49:55 --> Severity: Error --> Exception: Call to a member function from() on boolean /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 17
+Error - 2021-10-14 13:50:06 --> Severity: Error --> Exception: Call to a member function from() on boolean /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 17
+Error - 2021-10-14 13:50:22 --> Severity: Error --> Exception: Call to a member function result() on boolean /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 17
+Error - 2021-10-14 13:50:50 --> Severity: Error --> Exception: Call to a member function result() on boolean /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 17
+Error - 2021-10-14 14:03:33 --> Severity: Notice --> Undefined variable: sql /mnt/c/Posao/backend/src/config/mysql_driver.php 63
+Error - 2021-10-14 14:03:33 --> Severity: Error --> Exception: Call to a member function result() on string /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 17
+Error - 2021-10-14 14:04:10 --> Severity: Error --> Exception: Call to a member function from() on string /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 17
+Error - 2021-10-14 14:04:20 --> Severity: Notice --> Undefined variable: sql /mnt/c/Posao/backend/src/config/mysql_driver.php 63
+Error - 2021-10-14 14:04:20 --> Severity: Error --> Exception: Call to a member function result() on string /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 17
+Error - 2021-10-14 14:04:38 --> Severity: Notice --> Undefined variable: sql /mnt/c/Posao/backend/src/config/mysql_driver.php 63
+Error - 2021-10-14 14:04:38 --> Severity: Error --> Exception: Call to a member function result() on string /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 17
+Error - 2021-10-14 14:04:39 --> Severity: Notice --> Undefined variable: sql /mnt/c/Posao/backend/src/config/mysql_driver.php 63
+Error - 2021-10-14 14:04:39 --> Severity: Error --> Exception: Call to a member function result() on string /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 17
+Error - 2021-10-14 14:05:21 --> Severity: Notice --> Undefined variable: sql /mnt/c/Posao/backend/src/config/mysql_driver.php 63
+Error - 2021-10-14 14:05:21 --> Severity: Error --> Exception: Call to a member function result() on string /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 17
+Error - 2021-10-14 14:05:21 --> Severity: Notice --> Undefined variable: sql /mnt/c/Posao/backend/src/config/mysql_driver.php 63
+Error - 2021-10-14 14:05:21 --> Severity: Error --> Exception: Call to a member function result() on string /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 17
+Error - 2021-10-14 14:05:22 --> Severity: Notice --> Undefined variable: sql /mnt/c/Posao/backend/src/config/mysql_driver.php 63
+Error - 2021-10-14 14:05:22 --> Severity: Error --> Exception: Call to a member function result() on string /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 17
+Error - 2021-10-14 14:05:25 --> Severity: Notice --> Undefined variable: sql /mnt/c/Posao/backend/src/config/mysql_driver.php 63
+Error - 2021-10-14 14:05:25 --> Severity: Error --> Exception: Call to a member function result() on string /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 17
+Error - 2021-10-14 14:05:55 --> Severity: Error --> Exception: Call to a member function from() on string /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 17
+Error - 2021-10-14 14:08:14 --> Severity: Error --> Exception: Call to undefined method baza::select() /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 17
+Error - 2021-10-14 14:08:16 --> Severity: Error --> Exception: Call to undefined method baza::select() /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 17
+Error - 2021-10-14 14:08:16 --> Severity: Error --> Exception: Call to undefined method baza::select() /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 17
+Error - 2021-10-14 15:09:50 --> Severity: Error --> Exception: syntax error, unexpected end of file, expecting function (T_FUNCTION) or const (T_CONST) /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 34
+Error - 2021-10-14 15:10:28 --> Severity: Error --> Exception: syntax error, unexpected end of file, expecting function (T_FUNCTION) or const (T_CONST) /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 34
+Error - 2021-10-14 15:10:29 --> Severity: Error --> Exception: syntax error, unexpected end of file, expecting function (T_FUNCTION) or const (T_CONST) /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 34
+Error - 2021-10-14 15:10:31 --> Severity: Error --> Exception: syntax error, unexpected end of file, expecting function (T_FUNCTION) or const (T_CONST) /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 34
+Error - 2021-10-14 15:11:15 --> Severity: Error --> Exception: Call to undefined method baza::select() /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 18
+Error - 2021-10-14 15:12:18 --> Severity: Warning --> include(src/sys/kontroler.php): failed to open stream: No such file or directory /mnt/c/Posao/backend/src/sys/init.php 5
+Error - 2021-10-14 15:12:18 --> Severity: Warning --> include(): Failed opening 'src/sys/kontroler.php' for inclusion (include_path='.:/usr/share/php') /mnt/c/Posao/backend/src/sys/init.php 5
+Error - 2021-10-14 15:12:18 --> Severity: Error --> Exception: Call to undefined method baza::select() /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 18
+Error - 2021-10-14 15:12:50 --> Severity: Error --> Exception: syntax error, unexpected '__construct' (T_STRING), expecting function (T_FUNCTION) or const (T_CONST) /mnt/c/Posao/backend/src/sys/kontroler.php 7
+Error - 2021-10-14 15:13:37 --> Severity: Error --> Exception: syntax error, unexpected '}', expecting ',' or ';' /mnt/c/Posao/backend/src/sys/kontroler.php 28
+Error - 2021-10-14 15:13:38 --> Severity: Error --> Exception: syntax error, unexpected '}', expecting ',' or ';' /mnt/c/Posao/backend/src/sys/kontroler.php 28
+Error - 2021-10-14 15:14:14 --> Severity: Error --> Exception: Call to undefined method baza::select() /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 18
+Error - 2021-10-14 15:16:12 --> Severity: Notice --> Undefined property: baza::$db /mnt/c/Posao/backend/src/config/mysql_driver.php 64
+Error - 2021-10-14 15:16:12 --> Severity: Error --> Exception: Call to a member function real_escape_string() on null /mnt/c/Posao/backend/src/config/mysql_driver.php 64
+Error - 2021-10-14 15:17:03 --> Severity: Error --> Exception: syntax error, unexpected 'if' (T_IF) /mnt/c/Posao/backend/src/config/mysql_driver.php 11
+Error - 2021-10-14 15:17:14 --> Severity: Notice --> Undefined variable: sqlQuery /mnt/c/Posao/backend/src/config/mysql_driver.php 9
+Error - 2021-10-14 15:20:42 --> Severity: Error --> Exception: Call to undefined method baza::select() /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 18
+Error - 2021-10-14 15:20:50 --> Severity: Error --> Exception: Call to undefined method baza::select() /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 18
+Error - 2021-10-14 15:20:51 --> Severity: Error --> Exception: Call to undefined method baza::select() /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 18
+Error - 2021-10-14 15:22:30 --> Severity: Error --> Exception: Call to undefined method baza::select() /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 18
+Error - 2021-10-14 15:24:35 --> Severity: Error --> Exception: Call to undefined method baza::select() /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 18
+Error - 2021-10-14 15:26:39 --> Severity: Notice --> Undefined property: kontroler::$db /mnt/c/Posao/backend/src/sys/kontroler.php 25
+Error - 2021-10-14 15:26:39 --> Severity: Error --> Exception: Call to a member function escape() on null /mnt/c/Posao/backend/src/sys/kontroler.php 25
+Error - 2021-10-14 15:27:57 --> Severity: Error --> Exception: Call to undefined method baza::select() /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 18
+Error - 2021-10-14 15:33:09 --> Severity: Warning --> include(src/sys/kontroler.php): failed to open stream: No such file or directory /mnt/c/Posao/backend/src/sys/init.php 5
+Error - 2021-10-14 15:33:09 --> Severity: Warning --> include(): Failed opening 'src/sys/kontroler.php' for inclusion (include_path='.:/usr/share/php') /mnt/c/Posao/backend/src/sys/init.php 5
+Error - 2021-10-14 15:44:59 --> Severity: Warning --> rtrim() expects at least 1 parameter, 0 given /mnt/c/Posao/backend/src/config/mysql_driver.php 74
+Error - 2021-10-14 15:44:59 --> Severity: Warning --> ltrim() expects at least 1 parameter, 0 given /mnt/c/Posao/backend/src/config/mysql_driver.php 75
+Error - 2021-10-14 16:04:29 --> Severity: Notice --> Undefined property: baza::$db /mnt/c/Posao/backend/src/config/mysql_driver.php 88
+Error - 2021-10-14 16:04:29 --> Severity: Error --> Exception: Call to a member function query() on null /mnt/c/Posao/backend/src/config/mysql_driver.php 88
+Error - 2021-10-14 16:04:46 --> Severity: Notice --> Undefined variable: sql /mnt/c/Posao/backend/src/config/mysql_driver.php 88
+Error - 2021-10-14 16:04:46 --> Severity: Warning --> mysqli::query(): Empty query /mnt/c/Posao/backend/src/config/mysql_driver.php 88
+Error - 2021-10-14 16:05:06 --> Severity: Notice --> Undefined variable: sqlQuery /mnt/c/Posao/backend/src/config/mysql_driver.php 88
+Error - 2021-10-14 16:05:06 --> Severity: Warning --> mysqli::query(): Empty query /mnt/c/Posao/backend/src/config/mysql_driver.php 88
+Error - 2021-10-14 16:12:33 --> Severity: Error --> Exception: Call to undefined function mysql_fetch_assoc() /mnt/c/Posao/backend/src/config/mysql_driver.php 113
+Error - 2021-10-14 16:12:45 --> Severity: Error --> Exception: Call to undefined function fetch_assoc() /mnt/c/Posao/backend/src/config/mysql_driver.php 113
+Error - 2021-10-14 16:16:17 --> Severity: Notice --> Undefined variable: podaci /mnt/c/Posao/backend/src/config/mysql_driver.php 112
+Error - 2021-10-14 16:28:02 --> Severity: Error --> Exception: syntax error, unexpected 'else' (T_ELSE) /mnt/c/Posao/backend/src/config/mysql_driver.php 83
+Error - 2021-10-14 16:28:17 --> Severity: Error --> Exception: syntax error, unexpected '}', expecting ',' or ';' /mnt/c/Posao/backend/src/config/mysql_driver.php 85
+Error - 2021-10-14 16:29:46 --> Severity: Notice --> Undefined variable: sql /mnt/c/Posao/backend/src/config/mysql_driver.php 115

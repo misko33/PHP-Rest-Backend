@@ -1,0 +1,68 @@
+Error - 2021-10-13 12:34:26 --> Severity: Warning --> include(./sys/init.php): failed to open stream: No such file or directory /mnt/c/Posao/backend/index.php 12
+Error - 2021-10-13 12:34:26 --> Severity: Warning --> include(): Failed opening './sys/init.php' for inclusion (include_path='.:/usr/share/php') /mnt/c/Posao/backend/index.php 12
+Error - 2021-10-13 12:34:29 --> Severity: Warning --> include(./sys/init.php): failed to open stream: No such file or directory /mnt/c/Posao/backend/index.php 12
+Error - 2021-10-13 12:34:29 --> Severity: Warning --> include(): Failed opening './sys/init.php' for inclusion (include_path='.:/usr/share/php') /mnt/c/Posao/backend/index.php 12
+Error - 2021-10-13 12:34:32 --> Severity: Warning --> include(./sys/init.php): failed to open stream: No such file or directory /mnt/c/Posao/backend/index.php 12
+Error - 2021-10-13 12:34:32 --> Severity: Warning --> include(): Failed opening './sys/init.php' for inclusion (include_path='.:/usr/share/php') /mnt/c/Posao/backend/index.php 12
+Error - 2021-10-13 12:35:36 --> Severity: Warning --> include(config/config.php): failed to open stream: No such file or directory /mnt/c/Posao/backend/src/sys/init.php 3
+Error - 2021-10-13 12:35:36 --> Severity: Warning --> include(): Failed opening 'config/config.php' for inclusion (include_path='.:/usr/share/php') /mnt/c/Posao/backend/src/sys/init.php 3
+Error - 2021-10-13 12:35:36 --> Severity: Warning --> include(config/mysql_driver.php): failed to open stream: No such file or directory /mnt/c/Posao/backend/src/sys/init.php 4
+Error - 2021-10-13 12:35:36 --> Severity: Warning --> include(): Failed opening 'config/mysql_driver.php' for inclusion (include_path='.:/usr/share/php') /mnt/c/Posao/backend/src/sys/init.php 4
+Error - 2021-10-13 12:35:36 --> Severity: Notice --> Undefined variable: config /mnt/c/Posao/backend/src/sys/init.php 9
+Error - 2021-10-13 12:35:36 --> Severity: Notice --> Undefined variable: config /mnt/c/Posao/backend/src/sys/init.php 9
+Error - 2021-10-13 12:35:36 --> Severity: Error --> Exception: Class 'baza' not found /mnt/c/Posao/backend/src/sys/init.php 10
+Error - 2021-10-13 12:36:08 --> Severity: Warning --> mysqli::__construct(): (HY000/1698): Access denied for user 'root'@'localhost' /mnt/c/Posao/backend/src/config/mysql_driver.php 7
+Error - 2021-10-13 12:48:48 --> Severity: Warning --> mysqli::__construct(): (HY000/1698): Access denied for user 'root'@'localhost' /mnt/c/Posao/backend/src/config/mysql_driver.php 7
+Error - 2021-10-13 12:48:50 --> Severity: Warning --> mysqli::__construct(): (HY000/1698): Access denied for user 'root'@'localhost' /mnt/c/Posao/backend/src/config/mysql_driver.php 7
+Error - 2021-10-13 12:50:54 --> Severity: Warning --> mysqli::__construct(): (HY000/1698): Access denied for user 'root'@'localhost' /mnt/c/Posao/backend/src/config/mysql_driver.php 7
+Error - 2021-10-13 12:50:56 --> Severity: Warning --> mysqli::__construct(): (HY000/1698): Access denied for user 'root'@'localhost' /mnt/c/Posao/backend/src/config/mysql_driver.php 7
+Error - 2021-10-13 12:57:38 --> Severity: Warning --> mysqli::__construct(): (HY000/1698): Access denied for user 'root'@'localhost' /mnt/c/Posao/backend/src/config/mysql_driver.php 7
+Error - 2021-10-13 12:57:39 --> Severity: Warning --> mysqli::__construct(): (HY000/1698): Access denied for user 'root'@'localhost' /mnt/c/Posao/backend/src/config/mysql_driver.php 7
+Error - 2021-10-13 12:57:41 --> Severity: Warning --> mysqli::__construct(): (HY000/1698): Access denied for user 'root'@'localhost' /mnt/c/Posao/backend/src/config/mysql_driver.php 7
+Error - 2021-10-13 12:57:41 --> Severity: Warning --> mysqli::__construct(): (HY000/1698): Access denied for user 'root'@'localhost' /mnt/c/Posao/backend/src/config/mysql_driver.php 7
+Error - 2021-10-13 12:57:42 --> Severity: Warning --> mysqli::__construct(): (HY000/1698): Access denied for user 'root'@'localhost' /mnt/c/Posao/backend/src/config/mysql_driver.php 7
+Error - 2021-10-13 13:48:31 --> Severity: Error --> Exception: Call to undefined function clean() /mnt/c/Posao/backend/index.php 16
+Error - 2021-10-13 13:50:47 --> Severity: Error --> Exception: syntax error, unexpected '$this' (T_VARIABLE), expecting function (T_FUNCTION) or const (T_CONST) /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 6
+Error - 2021-10-13 13:52:28 --> Severity: Error --> Exception: syntax error, unexpected 'if' (T_IF), expecting function (T_FUNCTION) or const (T_CONST) /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 11
+Error - 2021-10-13 14:05:59 --> Severity: Notice --> Undefined variable: functionType /mnt/c/Posao/backend/index.php 28
+Error - 2021-10-13 14:05:59 --> Severity: Warning --> include(src/app/ljudski_resursi/common.php?functionType=&amp;array=): failed to open stream: No such file or directory /mnt/c/Posao/backend/index.php 28
+Error - 2021-10-13 14:05:59 --> Severity: Warning --> include(): Failed opening 'src/app/ljudski_resursi/common.php?functionType=&amp;array=' for inclusion (include_path='.:/usr/share/php') /mnt/c/Posao/backend/index.php 28
+Error - 2021-10-13 14:06:26 --> Severity: Notice --> Undefined variable: functionType /mnt/c/Posao/backend/index.php 28
+Error - 2021-10-13 14:06:26 --> Severity: Warning --> include(src/app/ljudski_resursi/common.php?functionType=&amp;array=123): failed to open stream: No such file or directory /mnt/c/Posao/backend/index.php 28
+Error - 2021-10-13 14:06:26 --> Severity: Warning --> include(): Failed opening 'src/app/ljudski_resursi/common.php?functionType=&amp;array=123' for inclusion (include_path='.:/usr/share/php') /mnt/c/Posao/backend/index.php 28
+Error - 2021-10-13 14:07:05 --> Severity: Warning --> include(src/app/ljudski_resursi/common.php?functionType=select&amp;array=123): failed to open stream: No such file or directory /mnt/c/Posao/backend/index.php 28
+Error - 2021-10-13 14:07:05 --> Severity: Warning --> include(): Failed opening 'src/app/ljudski_resursi/common.php?functionType=select&amp;array=123' for inclusion (include_path='.:/usr/share/php') /mnt/c/Posao/backend/index.php 28
+Error - 2021-10-13 14:08:24 --> Severity: Warning --> include(src/app/ljudski_resursi/common.php?functionType=select&amp;array=123): failed to open stream: No such file or directory /mnt/c/Posao/backend/index.php 28
+Error - 2021-10-13 14:08:24 --> Severity: Warning --> include(): Failed opening 'src/app/ljudski_resursi/common.php?functionType=select&amp;array=123' for inclusion (include_path='.:/usr/share/php') /mnt/c/Posao/backend/index.php 28
+Error - 2021-10-13 14:17:57 --> Severity: Notice --> Undefined variable: functionType /mnt/c/Posao/backend/index.php 28
+Error - 2021-10-13 14:17:57 --> Severity: Warning --> include(src/app/ljudski_resursi/common.php?functionType=&amp;array=): failed to open stream: No such file or directory /mnt/c/Posao/backend/index.php 28
+Error - 2021-10-13 14:17:57 --> Severity: Warning --> include(): Failed opening 'src/app/ljudski_resursi/common.php?functionType=&amp;array=' for inclusion (include_path='.:/usr/share/php') /mnt/c/Posao/backend/index.php 28
+Error - 2021-10-13 14:21:57 --> Severity: Error --> Exception: Class 'default_model' not found /mnt/c/Posao/backend/index.php 28
+Error - 2021-10-13 14:22:45 --> Severity: Error --> Exception: syntax error, unexpected '(array)' (array) (T_ARRAY_CAST) /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 9
+Error - 2021-10-13 14:22:58 --> Severity: Error --> Exception: syntax error, unexpected '(array)' (array) (T_ARRAY_CAST) /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 9
+Error - 2021-10-13 14:23:20 --> Severity: Error --> Exception: syntax error, unexpected '(array)' (array) (T_ARRAY_CAST) /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 9
+Error - 2021-10-13 14:23:29 --> Severity: Error --> Exception: syntax error, unexpected '(array)' (array) (T_ARRAY_CAST) /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 9
+Error - 2021-10-13 14:25:04 --> Severity: Error --> Exception: syntax error, unexpected '(array)' (array) (T_ARRAY_CAST) /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 11
+Error - 2021-10-13 14:25:04 --> Severity: Error --> Exception: syntax error, unexpected '(array)' (array) (T_ARRAY_CAST) /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 11
+Error - 2021-10-13 14:25:05 --> Severity: Error --> Exception: syntax error, unexpected '(array)' (array) (T_ARRAY_CAST) /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 11
+Error - 2021-10-13 14:25:05 --> Severity: Error --> Exception: syntax error, unexpected '(array)' (array) (T_ARRAY_CAST) /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 11
+Error - 2021-10-13 14:25:05 --> Severity: Error --> Exception: syntax error, unexpected '(array)' (array) (T_ARRAY_CAST) /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 11
+Error - 2021-10-13 14:25:05 --> Severity: Error --> Exception: syntax error, unexpected '(array)' (array) (T_ARRAY_CAST) /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 11
+Error - 2021-10-13 14:25:06 --> Severity: Error --> Exception: syntax error, unexpected '(array)' (array) (T_ARRAY_CAST) /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 11
+Error - 2021-10-13 14:25:06 --> Severity: Error --> Exception: syntax error, unexpected '(array)' (array) (T_ARRAY_CAST) /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 11
+Error - 2021-10-13 14:25:55 --> Severity: Error --> Exception: Call to undefined function select() /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 11
+Error - 2021-10-13 14:26:10 --> Severity: Error --> Exception: Call to undefined function select() /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 11
+Error - 2021-10-13 14:26:11 --> Severity: Error --> Exception: Call to undefined function select() /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 11
+Error - 2021-10-13 14:26:11 --> Severity: Error --> Exception: Call to undefined function select() /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 11
+Error - 2021-10-13 14:26:12 --> Severity: Error --> Exception: Call to undefined function select() /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 11
+Error - 2021-10-13 14:28:28 --> Severity: Notice --> Undefined property: default_model::$db /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 22
+Error - 2021-10-13 14:28:28 --> Severity: Error --> Exception: Call to a member function select() on null /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 22
+Error - 2021-10-13 14:41:00 --> Severity: Error --> Exception: Call to a member function select() on string /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 11
+Error - 2021-10-13 14:41:17 --> Severity: Error --> Exception: Call to undefined function select() /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 11
+Error - 2021-10-13 14:41:27 --> Severity: Notice --> Undefined property: default_model::$db /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 22
+Error - 2021-10-13 14:41:27 --> Severity: Error --> Exception: Call to a member function select() on null /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 22
+Error - 2021-10-13 14:42:21 --> Severity: Error --> Exception: Call to a member function select() on string /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 11
+Error - 2021-10-13 14:45:28 --> Severity: Notice --> Undefined property: default_model::$db /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 22
+Error - 2021-10-13 14:45:28 --> Severity: Error --> Exception: Call to a member function select() on null /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 22
+Error - 2021-10-13 16:23:49 --> Severity: Notice --> Undefined variable: functionType /mnt/c/Posao/backend/index.php 29
+Error - 2021-10-13 16:23:59 --> Severity: Error --> Exception: Call to undefined method baza::select() /mnt/c/Posao/backend/src/app/ljudski_resursi/common.php 26

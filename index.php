@@ -1,0 +1,42 @@
+<?php
+require_once 'src/sys/common.php';
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+set_error_handler('_error_handler');
+set_exception_handler('_exception_handler');
+register_shutdown_function('_shutdown_handler');
+
+$base_path = 'src/';
+define('BASEPATH', $base_path);
+$sys_path = 'src/sys/';
+define('SYSPATH', $sys_path);
+
+[$path, $class, $func] = destruct_url();
+
+if (file_exists("src/app/$path/$class.php"))
+{
+    include("src/app/$path/$class.php");
+    if (class_exists($class)){
+        $app = new $class();
+
+        if (method_exists($class, $func)) {
+            echo $app->$func();
+        } else 
+        {
+            show_error("Can't resolve 'src/app/$path/$class/$func'");
+        }
+
+    } 
+    else 
+    {
+        show_error("Can't resolve 'src/app/$path/$class/$func'");
+    }
+
+}
+else
+{
+    show_error("Can't resolve 'src/app/$path/$class/$func'");
+}
+?>
