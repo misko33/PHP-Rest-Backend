@@ -21,6 +21,7 @@ function clean($data) {
 }
 
 function destruct_url(){
+
 	$url = $_SERVER['PATH_INFO'];
 	$data = parse_url($url);
 	$new_data = explode('/', $data['path']);

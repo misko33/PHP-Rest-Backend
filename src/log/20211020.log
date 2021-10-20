@@ -1,13 +1,2 @@
-Info - 2021-10-20 08:40:16 --> Database Driver Class Initialized
-Error - 2021-10-20 08:40:16 --> Severity: Notice --> Undefined property: Log::$_file_permissions /mnt/c/Posao/backend/src/sys/log.php 34
-Error - 2021-10-20 08:40:16 --> Severity: Warning --> chmod(): Operation not permitted /mnt/c/Posao/backend/src/sys/log.php 34
-Info - 2021-10-20 08:40:29 --> Database Driver Class Initialized
-Info - 2021-10-20 08:40:30 --> Database Driver Class Initialized
-Info - 2021-10-20 08:40:33 --> Database Driver Class Initialized
-Info - 2021-10-20 08:42:12 --> Database Driver Class Initialized
-Info - 2021-10-20 08:42:19 --> Database Driver Class Initialized
-Info - 2021-10-20 08:42:26 --> Database Driver Class Initialized
-Info - 2021-10-20 08:56:56 --> Database Driver Class Initialized
-Info - 2021-10-20 08:56:57 --> Database Driver Class Initialized
-Info - 2021-10-20 08:56:57 --> Database Driver Class Initialized
-Info - 2021-10-20 08:57:06 --> Database Driver Class Initialized
+Error - 2021-10-20 12:02:16 --> Query error: No tables used - Invalid query: SELECT *
+ LIMIT 10

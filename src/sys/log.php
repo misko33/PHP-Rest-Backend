@@ -2,7 +2,7 @@
 class Log 
 {
     protected $path = 'src/log/';
-    protected $permission = '0777';
+    protected $permission = '0755';
     protected $threshold = [1];
     protected $date_format = 'Y-m-d H:i:s';
     protected $levels = ['error' => 1, 'debug' => 2, 'info' => 3];
@@ -11,7 +11,8 @@ class Log
     public function write_log($level, $msg)
     {
         $level = strtolower($level);
-        if (!isset($this->levels[$level]) && !isset($this->threshold[$this->levels[$level]]))
+
+        if (!isset($this->levels[$level]) || !in_array($this->levels[$level], $this->threshold))
 			return FALSE;
 
         $filepath = $this->path.date('Ymd').'.'.$this->extension;
@@ -31,7 +32,7 @@ class Log
         flock($fp, LOCK_UN);
         fclose($fp);
 
-        if (isset($newfile) && $newfile === TRUE) chmod($filepath, $this->_file_permissions);
+        //if (isset($newfile) && $newfile === TRUE) chmod($filepath, $this->permission);
 
         return is_int($result);
     }

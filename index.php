@@ -13,6 +13,7 @@ define('BASEPATH', $base_path);
 $sys_path = 'src/sys/';
 define('SYSPATH', $sys_path);
 
+if (isset($argv[1])) $_SERVER['PATH_INFO'] = $argv[1];
 [$path, $class, $func] = destruct_url();
 
 if (file_exists("src/app/$path/$class.php"))
@@ -21,22 +22,10 @@ if (file_exists("src/app/$path/$class.php"))
     if (class_exists($class)){
         $app = new $class();
 
-        if (method_exists($class, $func)) {
-            echo $app->$func();
-        } else 
-        {
-            show_error("Can't resolve 'src/app/$path/$class/$func'");
-        }
-
+        if (method_exists($class, $func)) echo $app->$func();
+        else  show_error("Can't resolve 'src/app/".$_SERVER['PATH_INFO']);
     } 
-    else 
-    {
-        show_error("Can't resolve 'src/app/$path/$class/$func'");
-    }
-
+    else  show_error("Can't resolve 'src/app/".$_SERVER['PATH_INFO']);
 }
-else
-{
-    show_error("Can't resolve 'src/app/$path/$class/$func'");
-}
+else show_error("Can't resolve 'src/app/".$_SERVER['PATH_INFO']);
 ?>

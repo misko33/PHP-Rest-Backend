@@ -18,7 +18,7 @@ class base_model {
 class crud_model extends base_model{
 
   protected $per_page = 10;
-  protected $page = 1;
+  protected $page = 0;
   protected $id = null;
   
   public function __construct($conf) {
