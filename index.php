@@ -18,7 +18,7 @@ if (isset($argv[1])) $_SERVER['PATH_INFO'] = $argv[1];
 
 if (file_exists("src/app/$path/$class.php"))
 {
-    include("src/app/$path/$class.php");
+    require_once("src/app/$path/$class.php");
     if (class_exists($class)){
         $app = new $class();
 
@@ -28,4 +28,5 @@ if (file_exists("src/app/$path/$class.php"))
     else  show_error("Can't resolve 'src/app/".$_SERVER['PATH_INFO']);
 }
 else show_error("Can't resolve 'src/app/".$_SERVER['PATH_INFO']);
+
 ?>

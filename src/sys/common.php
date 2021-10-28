@@ -33,6 +33,14 @@ function destruct_url(){
 	return [$path, $class, $func];
 }
 
+
+function test_input($data) {
+	$data = trim($data);
+	$data = stripslashes($data);
+	$data = htmlspecialchars($data);
+	return $data;
+}
+
 function &is_loaded($class = '')
 {
 	static $_is_loaded = array();
