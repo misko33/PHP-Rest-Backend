@@ -17,7 +17,9 @@ class base_model {
       $this->headers = getallheaders();
       if(isset($this->headers['Authorization'])){
         $this->token = $this->headers['Authorization'];
-      } 
+      }
+      if (isset($_SERVER['HTTP_AUTHORIZATION'])) $this->token = $_SERVER['HTTP_AUTHORIZATION'];
+
       if (!in_array($this->token, $ips)){
         show_error('500', 'Unauthorized.');
       }
