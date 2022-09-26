@@ -1,89 +1,57 @@
 <?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
 require_once(SYSPATH.'database/DB.php');
+require_once(SYSPATH.'rest.php');
 
-class base_model {
+class Base {
 
-  protected $db = null;
-  protected $table = null;
-  protected $post = null;
-  protected $auth = null;
-  private $token = null;
-  private $headers = null;
-  
-  public function __construct($conf = 'default') {
-    $this->db = DB($conf);
-    if ($this->auth == true){
-      require_once('src/config/keys.php');
-      $this->headers = getallheaders();
-      if(isset($this->headers['Authorization'])){
-        $this->token = $this->headers['Authorization'];
-      }
-      if (isset($_SERVER['HTTP_AUTHORIZATION'])) $this->token = $_SERVER['HTTP_AUTHORIZATION'];
+  protected $req_data = null;
+  protected $auth     = null;
+  private   $token    = null;
+  private   $headers  = null;
 
-      if (!in_array($this->token, $ips)){
-        show_error('500', 'Unauthorized.');
-      }
-    }
+  public function __construct(){
+  }
 
-    $json = file_get_contents('php://input');
-    $this->post = json_decode($json, true);
+  public function index($func){
+    if (method_exists($this, $func)) return $this->$func();
+    else err("Can't resolve ".$_SERVER['REQUEST_URI']);
   }
 }
 
-class crud_model extends base_model{
+class Base_model extends Base {
 
-  protected $per_page = 10;
-  protected $page = 0;
-  protected $id = null;
+  protected $db = null;
+  protected $table = null;
   
+  public function __construct($conf = 'default') {
+    parent::__construct();
+    $this->db = DB($conf);
+  }
+}
+
+class Crud_model extends Base_model{
+
   public function __construct($conf) {
     parent::__construct($conf);
-
-    if(isset($_GET['per_page']))  $this->per_page = clean($_GET['per_page']);
-    if(isset($_GET['page']))      $this->page = clean($_GET['page']);
-
-    if(isset($this->post['id'])) 
-    {
-      $this->id = $this->post['id'];
-      unset($this->post['id']);
-    }
-  }
-
-  public function set_params($params){
-    if (isset($params['per_page'])) $this->per_page = $params['per_page'];
-    if (isset($params['page'])) $this->page = $params['page'];
-    if (isset($params['id'])) {
-      $this->id = $params['id'];
-      unset($params['id']);
-    }
-    $this->post = $params;
-    return $this;
   }
 
   public function add(){
-    $this->db->insert($this->table, $this->post);
-    show_success();
+    res($this->db->insert($this->table, $this->post));
   }
 
   public function list(){
-    echo json_encode($this->db->get($this->table, $this->per_page, $this->per_page * $this->page)->result());
+    res($this->db->get($this->table, $this->per_page, $this->per_page * $this->page)->result());
   }
 
   public function edit(){
-    if (is_null($this->id)) show_error();
-    else 
-    {
-      $this->db->where('id', $this->id)->update($this->table, $this->post);
-      show_success();
-    }
+    if (isset($_POST->id)) err("No ID");
+    else res($this->db->where('id', $_POST->id)->update($this->table, $this->post));
   }
 
   public function delete(){
-    if (is_null($this->id)) show_error();
-    else 
-    {
-      $this->db->where('id', $this->id)->delete($this->table);
-      show_success();
-    }
+    if (isset($_POST->id)) err("No ID");
+    else res($this->db->where('id', $this->id)->delete($this->table));
   }
 }

@@ -109,7 +109,7 @@ class CI_DB_pdo_driver extends CI_DB {
 
 			if ($this->db_debug)
 			{
-				show_error('Invalid or non-existent PDO subdriver');
+				err('Invalid or non-existent PDO subdriver');
 			}
 		}
 

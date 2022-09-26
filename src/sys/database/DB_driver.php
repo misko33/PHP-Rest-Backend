@@ -352,7 +352,7 @@ abstract class DB_driver {
 
 				if ($this->db_debug)
 				{
-					show_error('1', 'db_unable_to_connect');
+					err('db_unable_to_connect');
 				}
 
 				return FALSE;
@@ -449,7 +449,7 @@ abstract class DB_driver {
 
 			if ($this->db_debug)
 			{
-				show_error('1', 'db_unable_to_set_charset');
+				err('db_unable_to_set_charset');
 			}
 
 			return FALSE;
@@ -503,7 +503,7 @@ abstract class DB_driver {
 		if ($sql === '')
 		{
 			log_message('error', 'Invalid query: '.$sql);
-			return ($this->db_debug) ? show_error('2', 'db_invalid_query') : FALSE;
+			return ($this->db_debug) ? err('db_invalid_query') : FALSE;
 		}
 		elseif ( ! is_bool($return_object))
 		{
@@ -569,7 +569,7 @@ abstract class DB_driver {
 				}
 
 				// Display errors
-				return show_error('2', 'Error Number: '.$error['code'].' msg: '.$error['message'].' sql: '.$sql);
+				return err('Error Number: '.$error['code'].' msg: '.$error['message'].' sql: '.$sql);
 			}
 
 			return FALSE;
@@ -1095,7 +1095,7 @@ abstract class DB_driver {
 	{
 		if (FALSE === ($sql = $this->_list_tables($constrain_by_prefix)))
 		{
-			return ($this->db_debug) ? show_error('2', 'db_unsupported_function') : FALSE;
+			return ($this->db_debug) ? err('db_unsupported_function') : FALSE;
 		}
 
 		$query = $this->query($sql);
@@ -1157,7 +1157,7 @@ abstract class DB_driver {
 	{
 		if (FALSE === ($sql = $this->_list_columns($table)))
 		{
-			return ($this->db_debug) ? show_error('2', 'db_unsupported_function') : FALSE;
+			return ($this->db_debug) ? err('db_unsupported_function') : FALSE;
 		}
 
 		$query = $this->query($sql);
@@ -1378,7 +1378,7 @@ abstract class DB_driver {
 
 		if ( ! function_exists($function))
 		{
-			return ($this->db_debug) ? show_error('2', 'db_unsupported_function') : FALSE;
+			return ($this->db_debug) ? err('db_unsupported_function') : FALSE;
 		}
 
 		return (func_num_args() > 1)

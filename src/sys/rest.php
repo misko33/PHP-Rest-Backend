@@ -1,113 +1,97 @@
 <?php
+defined('BASEPATH') OR exit('No direct script access allowed');
 
-class rest {
+class Rest {
+  public $conf = null;
+  public $confType = null;
+  public $data = null;
+  public $http_code = null;
 
-    protected $conf = null;
-    protected $rest = null;
-    protected $url = null;
-    protected $auth = null;
-    protected $user = null;
-    protected $pass = null;
-    protected $cert = null;
-    protected $token = null;
-
-    public function __construct($conf = 'default') {
-        $this->conf = $conf;
-        $this->rest = [ 
-            'get' => array(
-                CURLOPT_URL => null,
-                CURLOPT_RETURNTRANSFER  => 1,
-                CURLOPT_TIMEOUT => 3
-            ),
-            'post' => array(
-                CURLOPT_POST => 1,
-                CURLOPT_POSTFIELDS => null
-            )
-        ];
-
-        if ( ! file_exists($file_path = 'src/config/rest.php'))
-        {
-            show_error('1', 'The configuration file rest.php does not exist.');
-        }
+  public function __construct($conf = 'default', $db = null) {
+    if ( ! file_exists($file_path = 'src/config/rest.php'))
+      err('The configuration file rest.php does not exist.');
     
-        require_once($file_path);
+    include($file_path);
+    $this->conf = $config[$conf];
 
-        $this->url = $config[$conf]['url'];
-        $this->auth = $config[$conf]['auth'];
-        $this->user = $config[$conf]['username'];
-        $this->pass = $config[$conf]['password'];
-        $this->token = $config[$conf]['token'];
-        $this->cert = $config[$conf]['cert'];
-    }
+    $this->db = $db;
+  }
 
-    public function get($url, $query = "", $type = "json"){
-        return $this->curl($this->url.$url, $query, "", $type);
-    }
-
-    public function post($url, $query = "", $body = "", $type = "json"){
-        return $this->curl($this->url.$url, $query, $body, $type);
-    }
-
-    public function set_config($method = "get", $params = []){
-        $this->rest[$method] = $params;
-    }
-
-    public function basic($cURLConnection){
-        curl_setopt($cURLConnection, CURLOPT_USERPWD, $this->user . ":" . $this->pass);
-    }
-
-    public function digest($cURLConnection){
-        curl_setopt($cURLConnection, CURLOPT_HTTPAUTH, CURLAUTH_DIGEST);
-        curl_setopt($cURLConnection, CURLOPT_USERPWD, $this->user . ":" . $this->pass);
-    }
-
-    public function bearer($cURLConnection){
-        curl_setopt($cURLConnection, CURLOPT_HTTPHEADER, array('Content-Type: application/json', 'Authorization: Bearer '.$this->token));
-    }
-
-    public function apikey($cURLConnection){
-        curl_setopt($cURLConnection, CURLOPT_HTTPHEADER, array('Content-Type: application/json', 'Authorization: ' . $this->token));
-    }
+  protected function override_config($config){
+    $conf = $this->conf;
     
-    private function curl($url = false, $query = "", $body = "", $type = 'json') {
-        $supported_formats = array(
-            'xml' => 'application/xml',
-            'json' => 'application/json',
-            'jsonp' => 'application/javascript',
-            'serialized' => 'application/vnd.php.serialized',
-            'php' => 'text/plain',
-            'html' => 'text/html',
-            'csv' => 'application/csv'
-        );
-        $cURLConnection = curl_init();
+    if ($config)
+      foreach($config as $key => $c)
+          $conf[$key] = $c;
 
-        $this->rest['get'][CURLOPT_HTTPHEADER] = array('Content-Type: '.$supported_formats[$type]);
-        $this->rest['get'][CURLOPT_URL] = $url;
-        if ($query) $this->rest['get'][CURLOPT_URL] = $url."?".http_build_query($query);
-        if ($body) $this->rest['post'][CURLOPT_POSTFIELDS] = json_encode($body);
+    return $conf;
+  }
 
-        if ($body) {
-            $post_array = $this->rest['get'] + $this->rest['post'];
-            curl_setopt_array($cURLConnection, $post_array);
-        } else {
-            curl_setopt_array($cURLConnection, $this->rest['get']); 
-        }
-    
-        $this->{$this->auth}($cURLConnection);
+  public function get($url, $config = false){
+    $conf = $this->override_config($config);
+    $conf[CURLOPT_CUSTOMREQUEST]  = "GET";
+    $conf[CURLOPT_URL] = (isset(parse_url($url)['scheme'])) ? $url: $conf[CURLOPT_URL].$url;
 
-        $apiResponse = curl_exec($cURLConnection);
-        $curl_info = curl_getinfo($cURLConnection);
+    $this->curl($conf);
+    return [ 'data' => $this->data, 'status' => $this->http_code ];
+  }
 
-        $return = false;
+  public function post($url, $data, $config = false){
+    $conf = $this->override_config($config);
+    $conf[CURLOPT_CUSTOMREQUEST]  = "POST";
+    $conf[CURLOPT_URL] = (isset(parse_url($url)['scheme'])) ? $url: $conf[CURLOPT_URL].$url;
+    isset($conf[CURLOPT_POSTFIELDS]) || $conf[CURLOPT_POSTFIELDS] = json_encode($data);
 
-        if($curl_info['http_code'] == '200' || $curl_info['http_code'] == '201' || $curl_info['http_code'] == '0')
-        {            
-            $return = $apiResponse;     
-        }
-        curl_close($cURLConnection);
+    $this->curl($conf);
+    return [ 'data' => $this->data, 'status' => $this->http_code ];
+  }
 
-        return $return;
+  public function put($url, $data, $config = false){
+    $conf = $this->override_config($config);
+    $conf[CURLOPT_CUSTOMREQUEST]  = "PUT";
+    $conf[CURLOPT_URL] = (isset(parse_url($url)['scheme'])) ? $url: $conf[CURLOPT_URL].$url;
+    $conf[CURLOPT_POSTFIELDS] = json_encode($data);
+
+    $this->curl($conf);
+    return [ 'data' => $this->data, 'status' => $this->http_code ];
+  }
+
+  public function curl($curlopt = false) { 
+    $return = [];
+
+    if ($curlopt) {
+      $curl_session = null;
+      
+      try {
+        $curl_session = curl_init();
         
+        if ($curl_session === false) {
+          throw new Exception('failed to initialize curl object!');
+        }
+
+        curl_setopt_array($curl_session, $curlopt);
+        $api_res = json_decode(curl_exec($curl_session));
+
+        if ($api_res === false) {
+          throw new Exception(curl_error($curl_session), curl_errno($curl_session));
+        }
+
+        $curl_info = curl_getinfo($curl_session);
+        $this->data = $api_res;
+        $this->http_code = $curl_info['http_code'];
+      } 
+      catch (Exception $e) {
+        $this->data = [ 'message' => $e->getMessage(), 'line' => $e->getCode() ];
+        $this->http_code = 500;
+      } 
+      finally {
+        if ($curl_session) curl_close($curl_session);
+      }
+
+      return;
     }
 
+    $this->data = [ 'message' => 'No curl options provided!' ];
+    $this->http_code = 500;
+  }
 }

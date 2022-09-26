@@ -17,7 +17,7 @@ function DB($config = 'default')
 	// Load the DB config file if a DSN string wasn't passed
 	if ( ! file_exists($file_path = 'src/config/database.php'))
 	{
-		show_error('1', 'The configuration file database.php does not exist.');
+		err('The configuration file database.php does not exist.');
 	}
 
 	include($file_path);
@@ -26,18 +26,20 @@ function DB($config = 'default')
 	// No DB specified yet? Beat them senseless...
 	if (empty($params['dbdriver']))
 	{
-		show_error('1', 'You have not selected a database type to connect to.');
+		err('You have not selected a database type to connect to.');
 	}
 
 	require_once(SYSPATH.'database/DB_driver.php');
 	require_once(SYSPATH.'database/DB_query_builder.php');
 	
-	class CI_DB extends query_builder { }
-
+	if (!class_exists('CI_DB')){
+		class CI_DB extends query_builder { }
+	}
+	
 	// Load the DB driver
 	$driver_file = SYSPATH.'database/drivers/'.$params['dbdriver'].'/'.$params['dbdriver'].'_driver.php';
 
-	file_exists($driver_file) OR show_error('1', 'Invalid DB driver');
+	file_exists($driver_file) OR err('Invalid DB driver');
 	require_once($driver_file);
 
 	// Instantiate the DB adapter

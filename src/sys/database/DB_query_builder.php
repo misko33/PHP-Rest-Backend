@@ -265,14 +265,14 @@ abstract class query_builder extends DB_driver {
 	{
 		if ( ! is_string($select) OR $select === '')
 		{
-			show_error('2', 'db_invalid_query');
+			err('db_invalid_query');
 		}
 
 		$type = strtoupper($type);
 
 		if ( ! in_array($type, array('MAX', 'MIN', 'AVG', 'SUM')))
 		{
-			show_error('2', 'Invalid function type: '.$type);
+			err('Invalid function type: '.$type);
 		}
 
 		if ($alias === '')
@@ -1195,14 +1195,14 @@ abstract class query_builder extends DB_driver {
 		{
 			if (empty($this->qb_set))
 			{
-				return ($this->db_debug) ? show_error('2', 'db_must_use_set') : FALSE;
+				return ($this->db_debug) ? err('db_must_use_set') : FALSE;
 			}
 		}
 		else
 		{
 			if (empty($set))
 			{
-				return ($this->db_debug) ? show_error('2', 'insert_batch() called with no data') : FALSE;
+				return ($this->db_debug) ? err('insert_batch() called with no data') : FALSE;
 			}
 
 			$this->set_insert_batch($set, '');
@@ -1212,7 +1212,7 @@ abstract class query_builder extends DB_driver {
 		{
 			if ( ! isset($this->qb_from[0]))
 			{
-				return ($this->db_debug) ? show_error('2', 'db_must_set_table') : FALSE;
+				return ($this->db_debug) ? err('db_must_set_table') : FALSE;
 			}
 
 			$table = $this->qb_from[0];
@@ -1384,7 +1384,7 @@ abstract class query_builder extends DB_driver {
 	{
 		if (count($this->qb_set) === 0)
 		{
-			return ($this->db_debug) ? show_error('2', 'db_must_use_set') : FALSE;
+			return ($this->db_debug) ? err('db_must_use_set') : FALSE;
 		}
 
 		if ($table !== '')
@@ -1393,7 +1393,7 @@ abstract class query_builder extends DB_driver {
 		}
 		elseif ( ! isset($this->qb_from[0]))
 		{
-			return ($this->db_debug) ? show_error('2', 'db_must_set_table') : FALSE;
+			return ($this->db_debug) ? err('db_must_set_table') : FALSE;
 		}
 
 		return TRUE;
@@ -1419,14 +1419,14 @@ abstract class query_builder extends DB_driver {
 
 		if (count($this->qb_set) === 0)
 		{
-			return ($this->db_debug) ? show_error('2', 'db_must_use_set') : FALSE;
+			return ($this->db_debug) ? err('db_must_use_set') : FALSE;
 		}
 
 		if ($table === '')
 		{
 			if ( ! isset($this->qb_from[0]))
 			{
-				return ($this->db_debug) ? show_error('2', 'db_must_set_table') : FALSE;
+				return ($this->db_debug) ? err('db_must_set_table') : FALSE;
 			}
 
 			$table = $this->qb_from[0];
@@ -1558,7 +1558,7 @@ abstract class query_builder extends DB_driver {
 	{
 		if (count($this->qb_set) === 0)
 		{
-			return ($this->db_debug) ? show_error('2', 'db_must_use_set') : FALSE;
+			return ($this->db_debug) ? err('db_must_use_set') : FALSE;
 		}
 
 		if ($table !== '')
@@ -1567,7 +1567,7 @@ abstract class query_builder extends DB_driver {
 		}
 		elseif ( ! isset($this->qb_from[0]))
 		{
-			return ($this->db_debug) ? show_error('2', 'db_must_set_table') : FALSE;
+			return ($this->db_debug) ? err('db_must_set_table') : FALSE;
 		}
 
 		return TRUE;
@@ -1590,21 +1590,21 @@ abstract class query_builder extends DB_driver {
 
 		if ($index === NULL)
 		{
-			return ($this->db_debug) ? show_error('2', 'db_must_use_index') : FALSE;
+			return ($this->db_debug) ? err('db_must_use_index') : FALSE;
 		}
 
 		if ($set === NULL)
 		{
 			if (empty($this->qb_set_ub))
 			{
-				return ($this->db_debug) ? show_error('2', 'db_must_use_set') : FALSE;
+				return ($this->db_debug) ? err('db_must_use_set') : FALSE;
 			}
 		}
 		else
 		{
 			if (empty($set))
 			{
-				return ($this->db_debug) ? show_error('2', 'update_batch() called with no data') : FALSE;
+				return ($this->db_debug) ? err('update_batch() called with no data') : FALSE;
 			}
 
 			$this->set_update_batch($set, $index);
@@ -1614,7 +1614,7 @@ abstract class query_builder extends DB_driver {
 		{
 			if ( ! isset($this->qb_from[0]))
 			{
-				return ($this->db_debug) ? show_error('2', 'db_must_set_table') : FALSE;
+				return ($this->db_debug) ? err('db_must_set_table') : FALSE;
 			}
 
 			$table = $this->qb_from[0];
@@ -1715,7 +1715,7 @@ abstract class query_builder extends DB_driver {
 
 			if ($index_set === FALSE)
 			{
-				return show_error('2', 'db_batch_missing_index');
+				return err('db_batch_missing_index');
 			}
 
 			$this->qb_set_ub[] = $clean;
@@ -1740,7 +1740,7 @@ abstract class query_builder extends DB_driver {
 		{
 			if ( ! isset($this->qb_from[0]))
 			{
-				return ($this->db_debug) ? show_error('2', 'db_must_set_table') : FALSE;
+				return ($this->db_debug) ? err('db_must_set_table') : FALSE;
 			}
 
 			$table = $this->qb_from[0];
@@ -1769,7 +1769,7 @@ abstract class query_builder extends DB_driver {
 		{
 			if ( ! isset($this->qb_from[0]))
 			{
-				return ($this->db_debug) ? show_error('2', 'db_must_set_table') : FALSE;
+				return ($this->db_debug) ? err('db_must_set_table') : FALSE;
 			}
 
 			$table = $this->qb_from[0];
@@ -1837,7 +1837,7 @@ abstract class query_builder extends DB_driver {
 		{
 			if ( ! isset($this->qb_from[0]))
 			{
-				return ($this->db_debug) ? show_error('2', 'db_must_set_table') : FALSE;
+				return ($this->db_debug) ? err('db_must_set_table') : FALSE;
 			}
 
 			$table = $this->qb_from[0];
@@ -1866,7 +1866,7 @@ abstract class query_builder extends DB_driver {
 
 		if (count($this->qb_where) === 0)
 		{
-			return ($this->db_debug) ? show_error('2', 'db_del_must_use_where') : FALSE;
+			return ($this->db_debug) ? err('db_del_must_use_where') : FALSE;
 		}
 
 		$sql = $this->_delete($table);
@@ -1908,7 +1908,7 @@ abstract class query_builder extends DB_driver {
 	{
 		if ($table === '')
 		{
-			show_error('2', 'db_table_name_required');
+			err('db_table_name_required');
 		}
 
 		return $this->dbprefix.$table;

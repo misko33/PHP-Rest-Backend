@@ -3,13 +3,12 @@ class Log
 {
     protected $path = 'src/log/';
     protected $permission = '0755';
-    protected $threshold = [1];
+    protected $threshold = [1, 2];
     protected $date_format = 'Y-m-d H:i:s';
     protected $levels = ['error' => 1, 'debug' => 2, 'info' => 3];
     protected $extension = 'log';
 
-    public function write_log($level, $msg)
-    {
+    public function write_log($level, $msg){
         $level = strtolower($level);
 
         if (!isset($this->levels[$level]) || !in_array($this->levels[$level], $this->threshold))
@@ -37,8 +36,7 @@ class Log
         return is_int($result);
     }
 
-    protected function _format_line($level, $date, $message)
-	{
+    protected function _format_line($level, $date, $message){
 		return ucfirst($level).' - '.$date.' --> '.$message."\n";
 	}
 }
