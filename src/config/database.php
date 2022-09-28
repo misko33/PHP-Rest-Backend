@@ -4,9 +4,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
-	'username' => 'korisnik',
-	'password' => 'Loz!#432TsT',
-	'database' => 'baza1',
+	'username' => 'root',
+	'password' => '',
+	'database' => 'phprestdb',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

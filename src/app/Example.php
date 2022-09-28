@@ -4,7 +4,7 @@ require_once('src/sys/model.php');
 class Example extends Base{
 
     public function ok(){
-        return ['mama' => 'tijep'];
+        return ['data' => 'ok'];
     }
 
 }
