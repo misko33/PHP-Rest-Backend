@@ -7,14 +7,12 @@ class Rest {
   public $data = null;
   public $http_code = null;
 
-  public function __construct($conf = 'default', $db = null) {
+  public function __construct($conf = 'default') {
     if ( ! file_exists($file_path = 'src/config/rest.php'))
       err('The configuration file rest.php does not exist.');
     
     include($file_path);
     $this->conf = $config[$conf];
-
-    $this->db = $db;
   }
 
   protected function override_config($config){

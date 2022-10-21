@@ -45,32 +45,18 @@ function fromIp($start, $end){
 	return long2ip((ip2long($end) + 2 - ip2long($start)) ^ ip2long('255.255.255.255'));
 }
 
-function &is_loaded($class = '')
-{
-	static $_is_loaded = array();
+function &load_class($name, $class = false){
+	static $classes = [];
 
-	if ($class !== '') $_is_loaded[strtolower($class)] = $class;
+	if (isset($classes[$name])) return $classes[$name];
 
-	return $_is_loaded;
-}
-
-function &load_class($class, $param = NULL)
-{
-	static $classes = array();
-
-	if (isset($classes[$class])) return $classes[$class];
-
-	is_loaded($class);
-
-	$classes[$class] = isset($param)
-		? new $class($param)
-		: new $class();
-	return $classes[$class];
+	$classes[$name] = $class;
+	return $class;
 }
 
 function res($obj, $code = 200){
 	http_response_code($code);
-	echo json_encode($obj);
+	echo json_encode(['data' => $obj]);
 }
 
 function err($message = "Greska!", $error_code = 500){
@@ -81,7 +67,7 @@ function err($message = "Greska!", $error_code = 500){
 
 function log_message($level, $message)
 {
-	$log =& load_class('Log');
+	$log =& load_class('Log', new Log());
 
 	$log->write_log($level, $message);
 }
@@ -90,35 +76,29 @@ function _error_handler($severity, $message, $filepath, $line)
 {
     $is_error = (((E_ERROR | E_PARSE | E_COMPILE_ERROR | E_CORE_ERROR | E_USER_ERROR) & $severity) === $severity);
 
-    // Should we ignore the error? We'll get the current error_reporting
-    // level and add its bits with the severity bits to find out.
     if (($severity & error_reporting()) !== $severity)  return;
 
-    $error =& load_class('Errors');
+    $error =& load_class('Errors', new Errors());
     $error->log_exception($severity, $message, $filepath, $line);
 
 		if (str_ireplace(array('off', 'none', 'no', 'false', 'null'), '', ini_get('display_errors')))
 			$error->show_php_error($severity, $message, $filepath, $line);
 		else 
 			res("Unspecified error!", 500);
-
-    // If the error is fatal, the execution of the script should be stopped because
-    // errors can't be recovered from. Halting the script conforms with PHP's
-    // default error handling. See http://www.php.net/manual/en/errorfunc.constants.php
-    /*if ($is_error)*/ exit(1); // EXIT_ERROR
+    /*if ($is_error)*/ exit(1);
 }
 
 function _exception_handler($exception)
 {
-	$error =& load_class('Errors');
+	$error =& load_class('Errors', new Errors());
 	$error->log_exception('Error', 'Exception: '.$exception->getMessage(), $exception->getFile(), $exception->getLine());
-		// Should we display the error?
+
 	if (str_ireplace(array('off', 'none', 'no', 'false', 'null'), '', ini_get('display_errors')))
 		$error->show_exception($exception);
 	else 
 		res("Unspecified error!", 500);
 
-	exit(1); // EXIT_ERROR
+	exit(1);
 }
 
 function _shutdown_handler()

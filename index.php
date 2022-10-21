@@ -22,20 +22,13 @@ define('SYSPATH', $sys_path);
 if (isset($argv[1])) $_SERVER['REQUEST_URI'] = $argv[1];
 [$path, $class, $func] = destruct_url();
 
-if (file_exists("src/app/$path$class.php"))
-{
-    require_once("src/app/$path$class.php");
-    
-    if (class_exists($class)){
-        if ($_SERVER["CONTENT_TYPE"] == 'application/json'){
-            $_POST = json_decode(file_get_contents('php://input'), true);
-        }
+$test = '5';
 
-        $app = new $class();
-        res($app->index($func));
-    } 
-    else err("Can't resolve ".$_SERVER['REQUEST_URI']);
-}
-else err("Can't resolve ".$_SERVER['REQUEST_URI']);
+if (!file_exists("src/app/$path$class.php")) err("Can't resolve ".$_SERVER['REQUEST_URI']);
 
-?>
+require("src/app/$path$class.php");
+
+if (!class_exists($class)) err("Can't resolve ".$_SERVER['REQUEST_URI']);
+
+$app = new $class();
+res($app->index($func));

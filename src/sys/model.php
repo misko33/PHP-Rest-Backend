@@ -27,7 +27,7 @@ class Base_model extends Base {
   
   public function __construct($conf = 'default') {
     parent::__construct();
-    $this->db = DB($conf);
+    $this->db =& load_class('db', DB('radius'));
   }
 }
 
